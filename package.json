@@ -1,10 +1,15 @@
 {
   "name": "studymate",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Plateforme d'entraide académique pour étudiants",
+  "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "dev": "concurrently -n serveur,css -c blue,magenta \"nodemon server/server.js --ignore public/\" \"npm run watch:css\"",
+    "build:css": "tailwindcss -i styles/app.css -o public/css/style.css --minify",
+    "watch:css": "tailwindcss -i styles/app.css -o public/css/style.css --watch",
+    "build": "npm run build:css",
+    "db:init": "node server/database/init.js"
   },
   "keywords": [],
   "author": "",
