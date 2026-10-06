@@ -1,0 +1,14 @@
+# Dépendances (réinstallées avec npm install)
+node_modules/
+
+# Secrets
+.env
+
+# CSS généré par Tailwind
+public/css/style.css
+
+# Système / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
